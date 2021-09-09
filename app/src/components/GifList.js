@@ -1,5 +1,7 @@
 import React from 'react';
 import Gif from './Gif';
+import { connect } from 'react-redux';
+
 
 const GifList = props => {
     const {gifs} = props;
@@ -14,5 +16,9 @@ const GifList = props => {
         }
     </div>)
 }
-
-export default GifList;
+const mapStateToProps=state=>{
+    return{
+        gifs: state.gifs
+    }
+}
+export default connect(mapStateToProps)(GifList);
