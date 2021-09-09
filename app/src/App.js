@@ -1,14 +1,24 @@
-import logo from './logo.svg';
+import { connect } from 'react-redux';
 import './App.css';
-import Sport from './components/Sport';
+import GifList from './components/GifList';
+import data from './data/gifs';
 
-function App() {
+function App(props) {
+  const gifs = data;
+  const loading = false;
+  const error ="";
+
   return (
     <div className="App">
-      <h1>Random Sport App</h1>
-      <Sport />
+      <h1>Search for Gifs</h1>
+
+      <form>
+        <input />
+        <button>Search</button>
+      </form>
+      {loading ? <h3>we are loading</h3> : <GifList gifs={gifs} />}
     </div>
-  );
+  )
 }
 
 export default App;
