@@ -10,7 +10,7 @@ function App(props) {
   const { loading, error, getGifs } = props;
 
   useEffect(()=>{
-    getGifs()
+    getGifs('dogs')
     // props.fetchStart();
     // axios.get("https://api.giphy.com/v1/gifs/search?api_key=kmZebjzejq68SHiZE1aEtrsH7dO7NAhr&q=cats")
     //   .then(res=>{
